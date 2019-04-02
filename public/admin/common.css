@@ -1,0 +1,97 @@
+
+a:hover{
+    text-decoration: none;
+}
+
+
+.home-l{
+    float: left;
+    width:70%;
+}
+.home-t1{
+    margin-bottom: 20px;
+    width:100%;
+}
+.home-t1 ul{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.home-t1  ul li {
+    float: left; display: block; width:30%;
+}
+
+.home-abox{
+    display: block;
+    width:100%;
+    height:70px;
+    text-decoration: none;
+    background-color:#73a2e1;
+    color: #fff;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 70px;"
+}
+.home-abox:hover{
+    text-decoration: none;color: #fff;
+}
+.abox1{
+    background-color:#acda65;
+}
+.abox2{
+    background-color:#f77766;
+}
+.abox3{
+    background-color:#acda65;
+}
+
+.home-t2{
+    display:flex;
+    border:1px dashed #ddd;
+    width:100%;
+
+}
+
+.home-table{
+    text-align: center;
+}
+.home-table tr td{
+    height:160px;
+    text-align: center;
+}
+.home-table tr td a i{
+    font-size: 40px;
+}
+.home-table tr td a span{
+    display: block;
+    width: 100%;
+}
+
+.home-r{
+    float: right;
+    width:28%;
+    height:400px;
+    border:1px solid #ddd;
+}
+.kj{
+
+}
+.kj li{
+    text-align: left;
+    height:40px;
+    line-height: 40px;
+    border-bottom:1px dashed #ddd;
+}
+
+/***********************supplier******begin***************/
+.add-supplier{
+    position: absolute; top:50px;left:200px;display: none;   width:800px ; height:450px; background-color: #fff; border:1px solid #ddd; box-shadow: 5px 5px 0 #D3D4D3;
+}
+
+.active{
+    background-color: #7d7d7d;
+}
+.category-tab{
+    width:100%;height:200px;; display: none;
+}

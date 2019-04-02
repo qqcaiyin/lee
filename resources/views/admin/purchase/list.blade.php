@@ -4,23 +4,23 @@
 
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 购货 <span class="c-gray en">&gt;</span> 购货记录 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 
-<div class="page-container" >
+<div class="page-container"  style="min-width: 900px;">
 
 	<div class="cl pd-5  bk-gray ">
 		<span class="l">
 		<a href="javascript:;" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加</a>
-			<a href="javascript:;"  class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 导出</a>
+			<a href="javascript:;"  onclick="purchaseExport();"   class="btn btn-primary radius"><i class="Hui-iconfont">&#xe644;</i> 导出</a>
 		</span>
 		<div class="text-c" style="float: right;"> 日期范围：
 			<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;">
 			-
 			<input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax" class="input-text Wdate" style="width:120px;">
-			<input type="text" class="input-text" style="width:250px" placeholder="单据号、供应商、备注" id="" name="">
+			<input type="text" id="keywords" class="input-text" style="width:250px" placeholder="单据号、供应商、备注" id="" name="">
 			<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 查询</button>
 		</div>
 	</div>
 	<div class="mt-20" style="background-color: #fff;">
-	<table class="table table-border table-bordered table-hover table-bg table-sort">
+	<table class="table table-border table-bordered table-hover  table-sort">
 		<thead>
 			<tr class="text-c">
 				<th width="25"><input type="checkbox" name="" value=""></th>
@@ -77,37 +77,22 @@
 @section('my-js')
 	<script type="text/javascript">
 
-        //点击删除属性框数目
-        $('.del').click(function(){
-            if($('.tr1').length<=1){
-                layer.msg('最少保留一条', { time:2000});
-                return ;
-            }
-            if($(this).parent().parent('.trow').hasClass('newrow')){
-                del($(this).parents('.trow').index());
-            }
-            new_sort();
-        });
+     function purchaseExport(){
+         var starttime = $('#datemin').val(),
+			 endtime = $('#datemax').val(),
+			 keywords =  $('#keywords').val();
 
-        //点击增加属性框数目
-        $('.add').click(function(){
-            $('.tp1').clone(true).appendTo('.tbody').addClass('tr1').removeClass('tp1').removeAttr('style');
-            new_sort();
-        });
+         $.get('/excel/export',{starttime:starttime,endtime:endtime,keywords:keywords},function(res){
+             if(res.status ==0){
+                 layer.msg('正在导出', {time:2000});
+                 window.location.href = res.url;
+             }else{
+                 layer.msg(res.msg, {time:2000});
+                 return;
+			 }
 
-        function del(i){
-            $('.trow').eq(i).remove();
-        }
-
-
-        //重新排序
-        function  new_sort(){
-            $('.tr1').each(function (i) {
-                $('.tr1').eq(i).find('.erp-sort').html(i+1);
-            });
-        }
-
-
+         },'json');
+	 }
 
 	</script>
 @endsection

@@ -9,14 +9,14 @@ use Illuminate\Http\Request;
 
 use DB;
 
-class PurchaseController extends  CommonController {
+class CustomerController extends  CommonController {
 
 
 
-	//采购订单列表
-	public function toList(){
+	//供应商列表
+	public function customerList(){
 
-		return view('admin/purchase/list');
+		return view('admin/customer/list');
 
 	}
 
@@ -24,7 +24,7 @@ class PurchaseController extends  CommonController {
 	public function toAdd(){
 
 		$sn = $this->createSN();
-		return view('admin/purchase/add',compact('sn'));
+		return view('admin/customer/add',compact('sn'));
 
 	}
 

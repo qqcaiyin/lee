@@ -54,7 +54,7 @@
 
 @section('content')
     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 选择商品 </nav>
-<div class="page-container">
+<div class="page-container" style="background-color: #fff;" >
     <div style=" width: 100%;  display: inline-block; margin-top: 2px;" >
         <div  style="float: left; ; ">
         <form method="get" action="">
@@ -91,27 +91,25 @@
         <table class="table table-border table-hover table-bg table-sort table1">
             <thead>
             <tr class="text-c" >
-                <th width="15"><input type="checkbox" name="chkall"  id="chkall" value="0"></th>
-                <th width="40" >编号</th>
+                <th width="5%"><input type="checkbox" name="chkall"  id="chkall" value="0"></th>
+                <th width="10%" >编号</th>
                 <th style="text-align:left;">名称</th>
-                <th width="8%">售价</th>
+                <th width="10%" >单位</th>
+                <th width="15%">规格型号</th>
 
             </tr>
             </thead>
             <tbody>
             <form action method="post" name="goodForm">
             @foreach( $products as $product)
-            <tr class="text-c" >
+            <tr class="text-c" style="background-color: #fff;" >
                 <td width="15"><input type="checkbox" name="ids[]"  id="checkbox" value="{{$product->id}}"></td>
                 <td  >{{$product->id}}</td>
-                <td style="text-align:left;">
-                    <div style = "   width: 50px;height:50px;float:left; border:1px solid #e2e2e2; border-radius:5px;  display:table-cell;  vertical-align:middle;text-align:center;">
-                        <img  src=" {{url($product->preview)}}" style=" width:40px; height:40px;"  >
-                    </div>
-                    <input type="text" class="input-mi" style=" margin-top:15px; margin-left:12px; width:70%;" onchange="_change(this,'name',{{$product->id}})"  value=" {{$product->name}}" >
+                <td style="text-align:left;" >
+                    <span>{{$product->name}}</span>
                 </td>
-
-                <td ><input type="text"  class="input-mi"  style=" text-align: center; width:100px;"    onchange="_change(this,'price',{{$product->id}})"  value="{{$product->price}}" ></td>
+                <td >台</td>
+                <td ></td>
             </tr>
             @endforeach
             </form>
@@ -119,7 +117,7 @@
         </table>
     </div>
     <div style="height:50px; width:100%;  text-align: center;">
-        <span style=" display: inline-block; height:30px; width:80px; border:1px solid #007cc3; text-align: center; vertical-align: middle;  line-height: 30px; border-radius: 4px;cursor: pointer; "  onclick="selectPdt();" >提交</span>
+        <span style=" display: inline-block; height:30px; width:80px; border:1px solid #007cc3; text-align: center; vertical-align: middle;  line-height: 30px; border-radius: 4px;cursor: pointer; "  onclick="selectPdt();" >选中</span>
         <span style=" display: inline-block;  margin-left:50px  ;height:30px; width:80px; border:1px solid #007cc3; text-align: center; vertical-align: middle;  line-height: 30px; border-radius: 4px; cursor: pointer;"  onclick=" layer_close();" >返回</span>
 
     </div>

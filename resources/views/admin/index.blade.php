@@ -81,6 +81,27 @@
 				</ul>
 			</dd>
 		</dl>
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe63c;</i>基础资料 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{{url('/supplier-list')}}" data-title="供应商管理" href="javascript:void(0)">供应商管理</a></li>
+					<li><a data-href="{{url('/customer-list')}}" data-title="客户管理" href="javascript:void(0)">客户管理</a></li>
+					<li><a data-href="{{url('/-list')}}" data-title="商品管理" href="javascript:void(0)">商品管理</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe63c;</i> 辅助设置<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{{url('/category-list?id=1')}}" data-title="供应商类别" href="javascript:void(0)">供应商类别</a></li>
+					<li><a data-href="{{url('/category-list?id=2')}}" data-title="客户类别" href="javascript:void(0)">客户类别</a></li>
+					<li><a data-href="{{url('/category-list?id=3')}}" data-title="商品类别" href="javascript:void(0)">商品类别</a></li>
+					<li><a data-href="{{url('/-list')}}" data-title="计量单位" href="javascript:void(0)">计量单位</a></li>
+				</ul>
+			</dd>
+		</dl>
 
 </div>
 </aside>
@@ -99,7 +120,7 @@
 	<div id="iframe_box" class="Hui-article">
 		<div class="show_iframe">
 			<div style="display:none" class="loading"></div>
-			<iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe>
+			<iframe scrolling="yes" frameborder="0" src="{{url('/home-info')}}"></iframe>
 	</div>
 </div>
 </section>

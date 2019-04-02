@@ -9,14 +9,14 @@ use Illuminate\Http\Request;
 
 use DB;
 
-class PurchaseController extends  CommonController {
+class SupplierController extends  CommonController {
 
 
 
-	//采购订单列表
-	public function toList(){
+	//供应商列表
+	public function supplierList(){
 
-		return view('admin/purchase/list');
+		return view('admin/supplier/list');
 
 	}
 
