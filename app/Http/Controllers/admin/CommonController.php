@@ -122,4 +122,36 @@ class CommonController extends Controller
 		return $str;
 	}
 
+	//递归出节点列表
+	public function  getRbacTree($nodes=[] ,$pid = 0){
+		 $nodeList =array();
+		foreach ($nodes as $key => $v){
+			if($v['pid'] == $pid){
+				$v['son'] = $this->getRbacTree($nodes,$v['id']);
+				if($v['son']==null){
+					unset($v['son']);
+				}
+				$nodeList[]= $v;
+
+			}
+		}
+		return $nodeList;
+
+	}
+
+	//递归出节点列表
+	public function  getNodeTree($nodes=[] ,$pid = 0,$level = 0){
+		static $nodeList =array();
+		foreach ($nodes as $key => $v){
+			if($v['pid'] == $pid){
+				 $v['level']=$level;
+				 $v['node_title'] = '|-' . str_repeat('-------',$level) . $v['node_title'];
+				 $nodeList[]=$v;
+				 $this->getNodeTree($nodes,$v['id'],$level+1);
+			}
+		}
+		return $nodeList;
+	}
+
+
 }

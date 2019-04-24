@@ -63,9 +63,9 @@
 </style>
 
 @section('content')
-	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe6b9;</i> 采购 <span class="c-gray en">/</span>采购单 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 采购 <span class="c-gray en">&gt;</span> 购货单 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 
-<div class="pd-20"  style="width:80%; margin-left: 10%;  margin-top:20px;padding: 20px; background-color: #fff; border:1px solid #ddd;  ">
+<div class="pd-20"  style="width:70%; min-width: 900px; margin-left: 10%;  margin-top:30px;padding: 20px; background-color: #fff; border:1px solid #ddd;  ">
 <form  id="form-purchase-add"  action="{{url('/service/purchase-add')}}"  method="post" onsubmit="return check();"   >
 	{{csrf_field()}}
 		<div class="cl pd-5 mt-20" style="margin-bottom: 5px;" >
@@ -75,9 +75,9 @@
 				<span onclick="suppliers('','/suppliers-box','900','580')">...</span>
 			</span>
 			<div style="float:left; margin-left: 5%;">
-				<sapn style="display: inline-block;" >
+				<sapn>
 					单据日期：
-					<input type="text"  style=" display: inline-block; width:140px;  border:none; border-bottom: 1px solid #bbb;"   class="input-text datetimepicker-input Wdate  "   value=""  autocomplete="off" id="datetimepicker-demo-1" name="starttime">
+					<input type="text"     onfocus="WdatePicker({ Date:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="date" class="input-text Wdate"  name="purdate" value="{{date('Y-m-d',time())}}"    style="width:120px; border:none;  border-bottom:1px solid  #aaa;" autocomplete="off"  >
 				</sapn>
 			</div>
 			<div style=" float:left; margin-left: 5%;">
@@ -186,7 +186,7 @@
 		</div>
 		<div style="margin-top: 10px; width:50%; float: left;">
 			<span style="display: block; width:20%; float: left; ">制单人:</span>
-			<span >lee</span>
+			<span >吊炸天</span>
 		</div>
 		<div style="margin-top: 10px; float:right ;  ">
 			<button  type="submit" class="btn btn-primary "  type="submit">保存</button>

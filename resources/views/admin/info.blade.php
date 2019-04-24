@@ -8,45 +8,38 @@
 
 @section('content')
 
-<div  style=" display:inline-block; min-width: 1100px; margin:30px 2%; padding: 20px; background-color: #fff; border:1px solid #ddd;  ">
+<div  style=" display:inline-block; width:90%; margin:30px 2%; padding: 20px; background-color: #fff; border:1px solid #ddd;border-radius: 6px;  ">
 
 	<div class="home-l">
 		<div class="home-t1"  >
-			<ul>
-				<li >
-					<a  class="home-abox"  >采购汇总表</a>
-				</li>
-				<li >
-					<a  class="home-abox abox1"  >销售汇总表</a>
-				</li>
-				<li  >
-					<a  class="home-abox abox2"   >采购汇总表</a>
-				</li>
-			</ul>
+            <a  class="home-abox "   >采购汇总表</a>
+            <a  class="home-abox abox1"   >采购汇总表</a>
+            <a  class="home-abox abox3"   >采购汇总表</a>
+            <a  class="home-abox abox2"   >采购汇总表</a>
 		</div>
 
-		<div class="home-t2" >
+		<div >
 			<table class="home-table   " >
 				<tr>
-					<td  style="border:1px dashed #ddd; ">
+					<td >
 						<a  title="编辑" href="javascript:;" >
 							<i class="Hui-iconfont">&#xe625;</i>
 							<span >采购入库</span>
 						</a>
 					</td>
-					<td  style="border:1px dashed #ddd;">
+                    <td  >
 						<a  title="编辑" href="javascript:;" >
 							<i class="Hui-iconfont">&#xe634;</i>
 							<span >销售出库</span>
 						</a>
 					</td>
-					<td  style="border:1px dashed #ddd;">
+                    <td  >
 						<a  title="编辑" href="javascript:;" >
 							<i class="Hui-iconfont">&#xe6df;</i>
 							<span >库存盘点</span>
 						</a>
 					</td>
-					<td  style="border:1px dashed #ddd;">
+                    <td  >
 						<a  title="编辑" href="javascript:;" >
 							<i class="Hui-iconfont">&#xe692;</i>
 							<span >库存盘点</span>
@@ -54,25 +47,25 @@
 					</td>
 				</tr>
 				<tr>
-					<td  style="border:1px dashed #ddd; ">
+                    <td  >
 						<a  title="编辑" href="javascript:;" >
 							<i class="Hui-iconfont">&#xe627;</i>
 							<span >其他入库</span>
 						</a>
 					</td>
-					<td  style="border:1px dashed #ddd;">
+                    <td  >
 						<a  title="编辑" href="javascript:;" >
 							<i class="Hui-iconfont">&#xe687;</i>
 							<span >其他出库</span>
 						</a>
 					</td>
-					<td  style="border:1px dashed #ddd;">
+                    <td  >
 						<a  title="编辑" href="javascript:;" >
 							<i class="Hui-iconfont">&#xe6df;</i>
 							<span >采购入库</span>
 						</a>
 					</td>
-					<td  style="border:1px dashed #ddd;">
+                    <td  >
 						<a  title="编辑" href="javascript:;" >
 							<i class="Hui-iconfont">&#xe622;</i>
 							<span >意见反馈</span>
@@ -87,29 +80,18 @@
 	</div>
 
 	<div class="home-r">
-		<div style="height:50px; width:100%;line-height: 50px; text-align: right;">
-			<span>库存查询</span><input  type="text" style="height:30px;  border:1px solid #bbb; margin-left: 10px; margin-right: 5px; "   ><a class="	btn btn-warning radius">检索</a>
-		</div>
+
 		<div>
 			<ul class="kj">
-				<li style="background-color:#e0e0e0; color:#007cc3; font-weight: bolder; text-align: center;">
+				<li style="background-color:#f0f0f0; color:#f56c6c; font-weight: bolder; text-align: center; border:none;">
 					库存预警
 				</li>
 				<li>
-					<div class="stock-warn" style="padding-left: 10px; padding-right: 10px; color:red;">
+					<div class="stock-warn" style="padding-left: 10px; padding-right: 10px; color:#f56c6c;">
 						<span class="l"  >104电容</span><span  class="r" >余 ：1 袋</span>
 					</div>
 				</li>
-				<li>
-					<div class="stock-warn" style="padding-left: 10px; padding-right: 10px; color:red;">
-						<span class="l"  >发射管</span><span  class="r" >余 ：1 只</span>
-					</div>
-				</li>
-				<li>
-					<div class="stock-warn" style="padding-left: 10px; padding-right: 10px; color:red;">
-						<span class="l"  >104电容</span><span  class="r" >余 ：1 袋</span>
-					</div>
-				</li>
+
 			</ul>
 		</div>
 	</div>

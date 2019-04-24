@@ -53,16 +53,32 @@ class Handler extends ExceptionHandler
 
 	public function  render($request, Exception $e){
 		//如果$exception 是 ApiException的一个实例，则自定义返回的错误信息
+
 		if($e instanceof ApiException){
 			$result = [
 				"code"=>$e->getCode(),
-				"msg"=>$e->getMessage(),
+				"message"=>$e->getMessage(),
 				"data"=>""
 			];
 			return response()->json($result);
 		}
-		//如果不是，则使用 父类的处理方法
-		return parent::render($request, $e);
+
+		//如果开启调试模式，则使用 父类的处理方法
+		$type = getenv('APP_DEBUG');
+
+		if($type == 'true'){
+
+			return parent::render($request, $e);
+		}else{
+			$result = [
+				"code"=>401,
+				"message"=>$e->getMessage(),
+				"data"=>[]
+			];
+			//return response()->json($result);
+			return response()->view('404');
+		}
+
 
 	}
 

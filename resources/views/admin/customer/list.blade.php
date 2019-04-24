@@ -61,151 +61,160 @@ text-align: right;
 
 </style>
 @section('content')
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe63c;</i>基础资料 /<span class="c-gray en l-title">客户管理</span> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 设置 <span class="c-gray en">&gt;</span> 客户管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
-
-<div class="page-container"  style="min-width: 900px;">
-
-	<div class="cl pd-5  bk-gray ">
-		<span class="l">
-		<a href="javascript:;"  id="add-sup"  class="btn btn-primary radius "><i class="Hui-iconfont">&#xe600;</i> 添加</a>
-			<a href="javascript:;"  onclick="purchaseExport();"   class="btn btn-primary radius"><i class="Hui-iconfont">&#xe644;</i> 导出</a>
-		</span>
-		<div class="text-c" style="float: right;">
-			<input type="text" id="keywords" class="input-text" style="width:250px" placeholder="电话、客户、人名" id="" name="">
-			<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 查询</button>
+<div class="page-container"  style="">
+	<div style="background-color: #fff;border:1px solid #ddd; border-radius: 5px; padding: 20px;">
+		<div class="cl pd-5 ">
+			<span class="l">
+			<a href="javascript:;"  id="add-sup"  class="btn btn-primary radius "><i class="Hui-iconfont">&#xe600;</i> 添加</a>
+				<a href="javascript:;"  onclick="purchaseExport();"   class="btn btn-primary radius"><i class="Hui-iconfont">&#xe644;</i> 导出</a>
+			</span>
+			<div class="text-c" style="float: right;">
+				<input type="text" id="keywords" class="input-text" style="width:250px" placeholder="电话、客户、人名" id="" name="">
+				<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 查询</button>
+			</div>
 		</div>
-	</div>
-	<div class="mt-20" style="background-color: #fff;">
-	<table class="table table-border table-bordered table-hover  table-sort">
-		<thead>
-			<tr class="text-c">
-				<th width="25"><input type="checkbox" name="" value=""></th>
-				<th width="10%">客户编号</th>
-				<th width="8%">类别</th>
-				<th width="">客户名称</th>
-				<th width="8%">联系人</th>
-				<th width="10%">手机</th>
-				<th width="10%">座机</th>
-				<th width="10%">QQ</th>
-				<th width="8%">email</th>
-				<th width="5%">操作</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class="text-c">
-				<td><input type="checkbox" value="1" name=""></td>
-				<td>CG201903</td>
-				<td>购货</td>
-				<td>0002 深圳天</td>
-				<td>厉害</td>
-				<td>22.80</td>
-				<td class="text-l">0516-85761688</td>
-				<td>530667695</td>
-				<td>lee</td>
+		<div class="mt-20" style="background-color: #fff;">
+		<table class="table table-border table-bordered table-hover  table-sort">
+			<thead>
+				<tr class="text-c">
+					<th width="25"><input type="checkbox" name="" value=""></th>
+					<th width="10%">客户编号</th>
+					<th width="8%">类别</th>
+					<th width="">客户名称</th>
+					<th width="8%">联系人</th>
+					<th width="10%">手机</th>
+					<th width="10%">座机</th>
+					<th width="10%">QQ</th>
+					<th width="8%">email</th>
+					<th width="60">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="text-c">
+					<td><input type="checkbox" value="1" name=""></td>
+					<td>CG201903</td>
+					<td>购货</td>
+					<td>0002 深圳天</td>
+					<td>厉害</td>
+					<td>22.80</td>
+					<td class="text-l">0516-85761688</td>
+					<td>530667695</td>
+					<td>lee</td>
 
-				<td class="td-manage">
-					<a title="编辑" href="javascript:;" onclick="member_edit('编辑','member-add.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-					<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-			</tr>
+					<td class="td-manage">
+						<a title="编辑" href="javascript:;" onclick="member_edit('编辑','member-add.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+						<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+				</tr>
 
-		</tbody>
-	</table>
-	</div>
+			</tbody>
+		</table>
+		</div>
 
 
-	<div class="add-supplier"   id="add-supplier"  >
+		<div class="add-supplier shadow"  id="add-supplier"  >
 
-		<h4 style=" background-color:#acda65; color:#fff;  border-bottom:1px solid #bfbfbf;  margin-top: 0px; height:40px; line-height: 40px;  font-weight: bolder; padding-left: 20px;">
-			添加客户
-		</h4>
-		<div style="padding-left:50px;">
-			<p>
-				<label>客户名称：</label>
-				<input type="text" id="moble"  autocomplete="off"    style="width:300px; height:30px; border:1px solid #ddd;" >
-			</p>
-			<div style=" display:inline-block;  " >
-				<div style="float: left;">客户类别：</div>
-				<div  id="test"  style=" float:left; position:relative; ">
-					<div    style=" float: left;border:1px solid #ddd; width:200px; padding: 1px;" >
-						<input type="text" id="input-type"   autocomplete="off"    style="width:170px; height:30px; border:none;"  onkeyup="supplierBox()  " >
-						<i id="SupplierType"  class="Hui-iconfont" onclick="supplierBox()">&#xe6d5;</i>
-					</div>
-					<div  class="type-box"  style=" float: left;position:absolute;top:30px;left:0px;  overflow-y: auto;  width:202px; max-height: 200px; border:1px solid #bbb;  background-color: #fff; z-index: 90;  display: none;">
-						<p style="border-bottom: 1px dashed #eee; height:30px; line-height: 30px; margin-bottom: 0; margin-top: 0px; " >元器件</p>
-						<p style="border-bottom: 1px dashed #eee; height:30px; line-height: 30px; margin-bottom: 0; margin-top: 0px; " >元器件</p>
-						<p style="border-bottom: 1px dashed #eee; height:30px; line-height: 30px; margin-bottom: 0; margin-top: 0px; " >元器件</p>
-						<p style="border-bottom: 1px dashed #eee; height:30px; line-height: 30px; margin-bottom: 0; margin-top: 0px; " >元器件</p>
-						<p style="border-bottom: 1px dashed #eee; height:30px; line-height: 30px; margin-bottom: 0; margin-top: 0px; " >元器件</p>
-						<p style="border-bottom: 1px dashed #eee; height:30px; line-height: 30px; margin-bottom: 0; margin-top: 0px; " >元器件</p>
-						<p style="border-bottom: 1px dashed #eee; height:30px; line-height: 30px; margin-bottom: 0; margin-top: 0px; " >元器件</p>
-
-						<p id="addSupplierType"   style="background-color: #D3D4D3;  height:30px; line-height: 30px; margin-bottom: 0; margin-top: 0px;">+添加类型</p>
+			<h4 class="box-title">
+				添加客户
+			</h4>
+			<div style="padding-left:50px;">
+				<div style="display: inline-block; width:100%; ">
+					<label style="float:left; ">客户名称：</label>
+					<div style="float:left;  margin-left: 5px;">
+					<input type="text" id="name" class="radius"    autocomplete="off"    style="width:300px; height:30px; padding-left:10px; border:1px solid #ddd;" >
 					</div>
 				</div>
+				<div style=" display:inline-block;width:100%;margin-top: 10px; " >
+					<label style="float: left; ">客户类别：</label>
+					<div  id="test"  style="float:left; position:relative; margin-left: 5px;  ">
+						<div  class="radius"  style=" float: left;border:1px solid #ddd;  width:300px; padding: 2px  0 2px 0;" >
+							<input type="text"    id="input-type"   autocomplete="off"     style="width:270px; height:24px; border:none; padding-left: 10px;"  onkeyup="supplierBox() " >
+							<i id="SupplierType"  class="Hui-iconfont" onclick="supplierBox()">&#xe6d5;</i>
+						</div>
+						<div  class="type-box"  style=" float: left;position:absolute;top:32px;left:0px;  overflow-y: auto;  width:300px; max-height: 200px; border:1px solid #ddd;  background-color: #fff; z-index: 90;  display: none;">
+							<p style="border-bottom: 1px dashed #eee; height:30px; line-height: 30px; padding-left: 30px; margin-bottom: 0; margin-top: 0px; " >元器件</p>
+							<p style="border-bottom: 1px dashed #eee; height:30px; line-height: 30px; padding-left: 30px; margin-bottom: 0; margin-top: 0px; " >元器件</p>
+							<p style="border-bottom: 1px dashed #eee; height:30px; line-height: 30px; padding-left: 30px; margin-bottom: 0; margin-top: 0px; " >元器件</p>
+							<p style="border-bottom: 1px dashed #eee; height:30px; line-height: 30px; padding-left: 30px; margin-bottom: 0; margin-top: 0px; " >元器件</p>
+							<p style="border-bottom: 1px dashed #eee; height:30px; line-height: 30px; padding-left: 30px; margin-bottom: 0; margin-top: 0px; " >元器件</p>
+
+							<p id="addSupplierType"   style="background-color: #f0f0f0;  height:30px; line-height: 30px; margin-bottom: 0; margin-top: 0px; padding-left: 30px;">+添加类型</p>
+						</div>
+					</div>
 
 
-			</div>
-			<div style="width:90%; margin-bottom:10px; margin-top: 10px; ">
+				</div>
+				<div style="width:90%; margin-bottom:10px; margin-top: 10px; ">
 
-				<table class=" table1 " >
-					<thead>
-					<tr class="erp-th" >
-						<td width="5%"></td>
-						<td width="10%">联系人</td>
-						<td width="15%">手机</td>
-						<td width="15%">座机</td>
-						<td width="15%">QQ</td>
-						<td width="20%">Email</td>
-						<td width="5%">首要联系人</td>
-					</tr>
-					</thead>
-					<tbody class="tbody">
-					@for($i = 1; $i < 4 ; $i++)
-						<tr class="tr1 trow newrow" >
-							<td style="background-color: #f5f5f5;"     ><span class="erp-sort">{{$i}}</span></td>
-							<td>
-								<div  class="inp">
-									<input class="erp-input"  name="pdtname[]"      autocomplete="off" >
-									<label style=" width:10%; display:none;" onclick="suppliers('','/suppliers-box','900','580')">...</label>
-								</div>
-							</td>
-
-							<td><input class="erp-input1"  name="unit[]" 		autocomplete="off" ></td>
-							<td><input class="erp-input1"  name="num[]"  	  oninput ="onlyNum(this)"    autocomplete="off" ></td>
-							<td><input class="erp-input1"  name="discount[]"  	  oninput ="onlyAmount(this,1)"	autocomplete="off"></td>
-							<td><input class="erp-input1"  name="salemoney[]"  oninput ="onlyAmount(this,1)" autocomplete="off"></td>
-							<td><span class="label label-success radius">是</span></td>
+					<table class=" table1 " >
+						<thead>
+						<tr class="erp-th" >
+							<td width="5%"></td>
+							<td width="10%">联系人</td>
+							<td width="15%">手机</td>
+							<td width="15%">座机</td>
+							<td width="15%">QQ</td>
+							<td width="20%">Email</td>
+							<td width="5%">首要联系人</td>
 						</tr>
-					@endfor
-					</tbody>
+						</thead>
+						<tbody class="tbody">
+						@for($i = 1; $i < 4 ; $i++)
+							<tr class="tr1 trow newrow" >
+								<td style="background-color: #f5f5f5;"     ><span class="erp-sort">{{$i}}</span></td>
+								<td>
+									<div  class="inp">
+										<input class="erp-input"  name="pdtname[]"      autocomplete="off" >
+										<label style=" width:10%; display:none;" onclick="suppliers('','/suppliers-box','900','580')">...</label>
+									</div>
+								</td>
 
-				</table>
-				<p style="font-size: 8px; color: darkred;">(*至少填写一个联系人)</p>
+								<td><input class="erp-input1"  name="unit[]" 		autocomplete="off" ></td>
+								<td><input class="erp-input1"  name="num[]"  	  oninput ="onlyNum(this)"    autocomplete="off" ></td>
+								<td><input class="erp-input1"  name="discount[]"  	  oninput ="onlyAmount(this,1)"	autocomplete="off"></td>
+								<td><input class="erp-input1"  name="salemoney[]"  oninput ="onlyAmount(this,1)" autocomplete="off"></td>
+								<td><span class="label label-success radius">是</span></td>
+							</tr>
+						@endfor
+						</tbody>
+
+					</table>
+					<p style="font-size: 8px; color: darkred;">(*至少填写一个联系人)</p>
+				</div>
+				<p>
+					<textarea type="text" id="district"   placeholder="添加备注"    style=" width:90%; max-width:90%;    max-height:50px; border:1px solid #ddd;" ></textarea>
+				</p>
+				<button class="btn btn-success radius "   >保存 </button>
+				<button class="btn btn-default  radius"  data-id="add-supplier"  onclick="tclose(this)"  >关闭 </button>
+
 			</div>
-			<p>
-				<textarea type="text" id="district"   placeholder="添加备注"    style=" width:90%; max-width:90%;    max-height:50px; border:1px solid #ddd;" ></textarea>
-			</p>
-			<button class="btn btn-success  "   >保存 </button>
-			<button class="btn btn-default  "  data-id="add-supplier"  onclick="tclose(this)"  >关闭 </button>
+		</div>
 
+		<div   id="add-type-box"   style="position: absolute; top:100px;left:350px; width:350px; height:200px;  background-color: #fff; border:1px solid #aaa;  border-radius: 10px;
+		box-shadow: 5px 5px 0 0 #D3D4D3;
+    -webkit-box-shadow: #666 0px 0px 10px;
+    -moz-box-shadow: #666 0px 0px 10px;
+    z-index: 999;  display:none;"   >
+			<div style="width:100%; height:35px; background-color:#242f42; text-align: center; border-radius: 10px 10px 0 0;line-height: 35px;color:#f0f0f0 ;">
+				<span >新增类别</span>
+			</div>
+			<div style=" display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			  width:100%; margin-top: 20px;margin-bottom: 20px;
+				">
+				<label class="add-title">客户类别 </label>
+				<input type="text" id="add_type"  class="radius"  style="border:1px solid #ddd;  width: 60%; height: 35px;">
+				<input type="hidden" id="edit_type_id" value="0">
+			</div>
+			<div class="r" style="margin-right: 20px;">
+				<button class="btn btn-success radius " onclick="add_type();"  >保存 </button>
+				<button class="btn btn-default radius "  data-id="add-type-box" onclick="tclose(this)"  >关闭 </button>
+			</div>
 		</div>
 	</div>
-
-	<div   id="add-type-box"   style="position: absolute; top:100px;left:350px; width:350px; height:200px;  background-color: #fff; border:1px solid #aaa; box-shadow: 5px 5px 0 #D3D4D3;z-index: 99;  display:none;"   >
-		<div style="width:100%; height:35px; background-color:#acda65; text-align: center; line-height: 35px; color: #fff;">
-			新增类别
-		</div>
-		<div style="width:100%; margin-top: 20px;margin-bottom: 20px;">
-			<label>客户类别 : </label>
-			<input type="text"  style="border:1px solid #ddd;  width: 70%; height: 35px;">
-		</div>
-		<div class="r" style="margin-right: 20px;">
-			<button class="btn btn-success  "   >保存 </button>
-			<button class="btn btn-default  "  data-id="add-type-box" onclick="tclose(this)"  >关闭 </button>
-		</div>
-	</div>
-
 </div>
 <div id="fullbg" style=" position: absolute; top:0px; left:0px; z-index: 95;opacity: 0.6; background-color: #e0e0e0;"></div>
 

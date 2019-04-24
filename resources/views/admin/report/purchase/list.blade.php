@@ -22,7 +22,7 @@
 }
 
 .test{
-	position: absolute;top:29px;left:0;width:360px;background-color: #fff;border:1px solid #ddd;padding: 10px;z-index: 10;
+	display: none; position: absolute;  top:29px;left:0;width:360px;background-color: #fff;border:1px solid #ddd;padding: 10px;z-index: 10;
 }
 
 </style>
@@ -39,25 +39,30 @@
 					<input  class="ser" style=" width:150px; height:30px;line-height: 30px;background-color: #fff;text-align: center; border:1px solid #ddd; "   disabled="disabled" value="请选择查询条件"  >
 					<button type="submit" class="btn btn-default radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> </button>
 			</div>
-			<div class="test  "style="display: none;"    >
+			<div class="test  " >
 				<div>
-					日期范围：
+					<span style="display:inline-block; width:80px;text-align: right;">日期范围：</span>
 					<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;">
 					-
 					<input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax" class="input-text Wdate" style="width:120px;">
 				</div>
 				<div style="margin-top: 10px;">
-					供货商：
-
-
+                    <span style="display:inline-block; width:80px;text-align: right;">供货商：</span>
+                    <div style=" display:inline-block; border:1px solid #ddd; padding: 0 5px; " >
+                        <input type="text" style="border:none; height:30px; ;"   >
+                    <span>...</span>
+                    </div>
 				</div>
 				<div style="margin-top: 10px;">
-					商品：
-
+                    <span style="display:inline-block; width:80px;text-align: right; ">商品：</span>
+                    <div style=" display:inline-block; border:1px solid #ddd; padding: 0 5px; " >
+                        <input type="text" style="border:none; height:30px; ;"   >
+                        <span>...</span>
+                    </div>
 				</div>
 				<span class="r">
-					<a href="javascript:;"  class="btn  btn-default"> 重置</a>
-					<a href="javascript:;" class="btn btn-primary  "> 确定</a>
+					<button type="reset"  class="btn  btn-default"> 重置</button>
+					<a href="javascript:;"  class="btn btn-primary sub "> 确定</a>
 
 				</span>
 			</div>
@@ -66,7 +71,7 @@
 
 
 		<span class="r">
-		<a href="javascript:;" class="btn btn-primary  "> 打印</a>
+		    <a href="javascript:;" class="btn btn-primary  "> 打印</a>
 			<a href="javascript:;"  class="btn  btn-default"> 导出</a>
 		</span>
 	</div>
@@ -76,7 +81,8 @@
 		<div>
 			<p style="font-size: 24px; color: #0d0d0d; font-family: 'Microsoft Yahei'; ">商品采购明细表</p>
 		</div>
-	<table class="table1   ">
+        <span style=" display:block;  width:100%; text-align: left;   ">日期：2011-1-1   至 2018-1-1  </span>
+	    <table class="table1   ">
 		<thead>
 			<tr class="text-c">
 				<th width="12%">采购日期</th>
@@ -92,7 +98,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class="text-c tr-b">
+			<tr data-id="1"  class="text-c tr-b">
 				<td>2014-6-11 11:11:42</td>
 				<td>CG201903191304399</td>
 				<td>购货</td>
@@ -104,7 +110,7 @@
 				<td >544211.11</td>
 
 			</tr>
-			<tr class="text-c tr-b">
+			<tr data-id="2"  class="text-c tr-b">
 				<td>2014-6-11 11:11:42</td>
 				<td>CG201903191304399</td>
 				<td>购货</td>
@@ -127,6 +133,12 @@
 		</tbody>
 	</table>
 	</div>
+
+
+
+
+
+
 </div>
 @endsection
 
@@ -139,6 +151,22 @@
 
         })
 
+
+        $(document,).bind("click",function(e){
+            var target  = $(e.target);
+            if(target.closest(".search-box").length == 0){
+                $(".test").hide();
+            }
+        })
+
+        $('.sub').click(function () {
+            $(".test").hide();
+        })
+
+        $('.tr-b').click(function () {
+		    var id = $(this).data('id');
+		    location.href="/purchase-add";
+        });
 
 
 

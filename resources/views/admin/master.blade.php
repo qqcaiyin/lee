@@ -26,7 +26,9 @@
     <meta name="keywords" content="H-ui.a">
     <meta name="description" content="H-ui.admin">
 </head>
-<body  style="background-color:#f5f5f5;">
+<body  style="background-color:#f0f0f0; color:#555;
+ font-family:  PingFang SC,Helvetica Neue,Helvetica,microsoft yahei,arial,STHeiTi,sans-serif;
+">
 
 @yield('content')
 
@@ -40,6 +42,8 @@
 <script type="text/javascript" src="/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
 <script type="text/javascript" src="/admin/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
 <script type="text/javascript" src="/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+
+<script type="text/javascript" src="/admin/common.js"></script>
 
 @yield('my-js')
 
